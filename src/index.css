@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* osahou design tokens (inlined from @osahou/tokens) */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-none: 0px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px rgba(40 28 10 / .08), 0 1px 2px rgba(40 28 10 / .05);
+  --shadow-sm-cool: 0 1px 3px rgba(10 20 50 / .08), 0 1px 2px rgba(10 20 50 / .05);
+  --shadow-md: 0 4px 12px rgba(40 28 10 / .09), 0 2px 4px rgba(40 28 10 / .05);
+  --shadow-md-cool: 0 4px 12px rgba(10 20 50 / .09), 0 2px 4px rgba(10 20 50 / .05);
+  --shadow-lg: 0 8px 24px rgba(40 28 10 / .11), 0 4px 8px rgba(40 28 10 / .05);
+  --shadow-lg-cool: 0 8px 24px rgba(10 20 50 / .11), 0 4px 8px rgba(10 20 50 / .05);
+  --shadow-xl: 0 16px 48px rgba(40 28 10 / .13), 0 8px 16px rgba(40 28 10 / .06);
+  --shadow-xl-cool: 0 16px 48px rgba(10 20 50 / .13), 0 8px 16px rgba(10 20 50 / .06);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --font-sans: "M PLUS Rounded 1c", system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --text-display-2xl: clamp(40px, 4vw + 1.5rem, 72px);
+  --text-display-xl: clamp(34px, 3.5vw + 1rem, 60px);
+  --text-display-lg: clamp(28px, 3vw + 0.75rem, 48px);
+  --text-display-md: clamp(24px, 2vw + 0.75rem, 36px);
+  --text-display-sm: clamp(22px, 1.5vw + 0.75rem, 30px);
+  --text-heading-xl: 24px;
+  --text-heading-lg: 20px;
+  --text-heading-md: 18px;
+  --text-heading-sm: 16px;
+  --text-body-lg: 18px;
+  --text-body-md: 16px;
+  --text-body-sm: 14px;
+  --text-label-lg: 14px;
+  --text-label-md: 12px;
+  --text-label-sm: 11px;
+  --leading-tight: 1.2;
+  --leading-snug: 1.4;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.9;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.02em;
+  --tracking-widest: 0.12em;
+  --layer-base: 0;
+  --layer-raised: 10;
+  --layer-dropdown: 100;
+  --layer-sticky: 200;
+  --layer-overlay: 300;
+  --layer-modal: 400;
+  --layer-toast: 500;
+  --layer-tooltip: 600;
+
+  /* カラートークン（osahou brand / OKLCH） */
+  --color-primary:                   oklch(40% 0.18 258);
+  --color-primary-container:         oklch(48% 0.17 258);
+  --color-on-primary:                oklch(98% 0.01 258);
+  --color-surface:                   oklch(98.5% 0.008 258);
+  --color-surface-container-lowest:  oklch(100% 0 0);
+  --color-surface-container-low:     oklch(96% 0.012 258);
+  --color-surface-container:         oklch(93% 0.018 258);
+  --color-surface-container-high:    oklch(90% 0.02 258);
+  --color-surface-container-highest: oklch(87% 0.022 258);
+  --color-on-surface:                oklch(18% 0.03 258);
+  --color-on-surface-variant:        oklch(40% 0.04 258);
+  --color-outline:                   oklch(55% 0.04 258);
+  --color-outline-variant:           oklch(80% 0.025 258);
+  --color-error:                     oklch(40% 0.2 25);
+  --color-error-container:           oklch(92% 0.06 25);
+  --color-on-error-container:        oklch(25% 0.12 25);
+  --color-success:                   oklch(38% 0.14 155);
+  --color-success-container:         oklch(92% 0.05 155);
+  --color-on-success-container:      oklch(22% 0.1 155);
+  --color-warning:                   oklch(50% 0.15 65);
+  --color-warning-container:         oklch(94% 0.06 65);
+  --color-on-warning-container:      oklch(28% 0.1 65);
+
+  /* ブランドカラートークン */
+  --passport-navy:     oklch(0.210 0.072 258);
+  --passport-gold:     oklch(0.660 0.138 65);
+  --passport-cream:    oklch(0.97 0.015 65);
+  --passport-stamp:    oklch(0.480 0.220 20);
+  --logo-seal:         oklch(0.480 0.220 20);
+  --color-secondary:   oklch(0.560 0.153 195);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+  }
+}
+
+/* ベーススタイル */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── パスポートモーダル アニメーション ─── */
+
+/* オーバーレイ */
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* パスポートが画面に登場 */
+@keyframes passport-enter {
+  from { opacity: 0; transform: scale(0.85) rotate(0deg); }
+  to   { opacity: 1; transform: scale(1)    rotate(0deg); }
+}
+
+/* パスポート全体が縦から横にゆっくり90°回転（最初は遅く、徐々に加速） */
+@keyframes passport-rotate {
+  0%   { transform: rotate(0deg); }
+  18%  { transform: rotate(7deg); }
+  100% { transform: rotate(90deg); }
+}
+
+/* 表紙が本のように開く（左端ヒンジ、perspective内蔵） */
+@keyframes cover-flip {
+  0%   { transform: perspective(700px) rotateY(0deg); }
+  10%  { transform: perspective(700px) rotateY(-20deg); } /* 少し持ち上げる動き */
+  100% { transform: perspective(700px) rotateY(-172deg); }
+}
+
+/* 表紙がめくれない端末向けフォールバック（scaleX + opacity） */
+@keyframes cover-flip-fallback {
+  0%   { transform: scaleX(1);   opacity: 1; }
+  50%  { transform: scaleX(0);   opacity: 0.3; }
+  100% { transform: scaleX(0);   opacity: 0; }
+}
+
+/* 2フェーズ表紙めくり: 90°で止まり（本を開いた状態）→さらに90°折りたたんで消える */
+@keyframes cover-flip-2phase {
+  0%   { transform: rotateY(0deg); }
+  40%  { transform: rotateY(-90deg); }
+  58%  { transform: rotateY(-90deg); }
+  100% { transform: rotateY(-180deg); }
+}
+
+/* IDページのフェードイン */
+@keyframes id-page-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ハンコが降りてくる */
+@keyframes stamp-drop {
+  0%   { transform: translateY(-56px) rotate(-15deg) scale(0.7); opacity: 0; }
+  55%  { transform: translateY(6px)   rotate(-15deg) scale(0.96); opacity: 1; }
+  70%  { transform: translateY(-4px)  rotate(-15deg) scale(1.04); }
+  85%  { transform: translateY(2px)   rotate(-15deg) scale(0.99); }
+  100% { transform: translateY(0)     rotate(-15deg) scale(1);    opacity: 1; }
+}
+
+/* ボタンのフェードイン */
+@keyframes buttons-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* アニメーションクラス */
+.anim-overlay-in    { animation: overlay-in      var(--duration-normal) var(--ease-out)    forwards; }
+.anim-passport-in   { animation: passport-enter  var(--duration-normal) var(--ease-out)    forwards; }
+/* 回転はゆっくり（900ms）、表紙めくりは少し遅延させて書籍らしく（150ms遅延 × 1800ms） */
+.anim-rotate        { animation: passport-rotate 900ms                  var(--ease-in-out) forwards; }
+.anim-cover-flip    { animation: cover-flip      750ms  100ms           var(--ease-in-out) both; }
+.anim-cover-fallback{ animation: cover-flip-fallback 750ms var(--ease-in-out) forwards; }
+/* 2フェーズ: 開いて止まり → 折りたたんで消える */
+.anim-cover-2phase  { animation: cover-flip-2phase 1800ms 150ms         var(--ease-in-out) both; }
+.anim-id-page-in    { animation: id-page-in      250ms                  var(--ease-out)    forwards; }
+.anim-stamp         { animation: stamp-drop      400ms                  var(--ease-out)    forwards; }
+.anim-buttons-in    { animation: buttons-in      var(--duration-normal) var(--ease-out)    forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-overlay-in,
+  .anim-passport-in,
+  .anim-rotate,
+  .anim-cover-flip,
+  .anim-cover-fallback,
+  .anim-cover-2phase,
+  .anim-id-page-in,
+  .anim-stamp,
+  .anim-buttons-in { animation: none; opacity: 1; transform: none; }
+}
