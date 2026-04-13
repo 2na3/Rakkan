@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
-import './header.css';
+import './Header.css';
 
 export interface HeaderNavItem {
   label:    string;
