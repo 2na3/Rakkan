@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { Seal } from '@phosphor-icons/react'
+import { SealIcon } from '@phosphor-icons/react'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { DropZone } from './components/DropZone'
@@ -156,7 +156,7 @@ export function App() {
     <div className="min-h-screen bg-surface flex flex-col">
       {/* ヘッダー */}
       <Header
-        brandLogo={<Seal size={28} weight="fill" aria-hidden />}
+        brandLogo={<SealIcon size={28} weight="fill" aria-hidden />}
         brandName="Rakkan"
         sticky
       />
