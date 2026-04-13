@@ -103,6 +103,18 @@
   --passport-stamp:    oklch(0.480 0.220 20);
   --logo-seal:         oklch(0.480 0.220 20);
   --color-secondary:   oklch(0.560 0.153 195);
+
+  /* コンテナ設定 */
+  --container-padding: clamp(16px, 5vw, 80px);
+  --container-max: 1120px;
+
+  /* @osahou/components 互換エイリアス */
+  --color-brand:       var(--color-primary);
+  --color-brand-light: var(--color-primary-container);
+  --color-border:      var(--color-outline-variant);
+  --color-text-1:      var(--color-on-surface);
+  --color-text-2:      var(--color-on-surface-variant);
+  --color-surface-2:   var(--color-surface-container-low);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -111,6 +123,14 @@
     --duration-normal: 0ms;
     --duration-slow: 0ms;
   }
+}
+
+/* osahou Header を Rakkan のネイビーテーマに上書き */
+.osahou-header {
+  --color-surface:  var(--passport-navy);
+  --color-border:   transparent;
+  --color-text-1:   var(--passport-gold);
+  --color-brand:    var(--logo-seal);
 }
 
 /* ベーススタイル */

@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Seal } from '@phosphor-icons/react'
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 import { DropZone } from './components/DropZone'
 import { ProfilePanel } from './components/ProfilePanel'
 import { AiRejectionAlert } from './components/AiRejectionAlert'
@@ -151,16 +153,15 @@ export function App() {
   const canProcess = readyCount > 0 && !!profileState.activeProfile && !isProcessing
 
   return (
-    <div className="min-h-screen bg-surface">
+    <div className="min-h-screen bg-surface flex flex-col">
       {/* ヘッダー */}
-      <header className="sticky top-0 z-sticky bg-passport-navy px-4 py-3 flex items-center gap-3">
-        <Seal size={28} weight="fill" style={{ color: 'var(--logo-seal)' }} aria-hidden />
-        <div>
-          <h1 className="text-base font-bold text-passport-gold leading-tight">Rakkan</h1>
-        </div>
-      </header>
+      <Header
+        brandLogo={<Seal size={28} weight="fill" aria-hidden />}
+        brandName="Rakkan"
+        sticky
+      />
 
-      <main className="max-w-2xl mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="max-w-2xl mx-auto px-4 py-6 flex flex-col gap-6 flex-1">
         <PrivacyNotice />
 
         <ProfilePanel
@@ -252,9 +253,7 @@ export function App() {
         )}
       </main>
 
-      <footer className="text-center text-xs text-on-surface-variant py-8 border-t border-outline-variant mt-4">
-        © 2026 Shirota - All rights reserved
-      </footer>
+      <Footer copyright="© 2026 Shirota - All rights reserved" />
 
       {/* パスポートモーダル */}
       {modalTarget && profileState.activeProfile && (

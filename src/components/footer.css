@@ -1,0 +1,120 @@
+/* ── ルート ── */
+
+.osahou-footer {
+  width: 100%;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.osahou-footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ── 上層：ナビ・規約リンク ── */
+
+.osahou-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2) var(--space-6);
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.osahou-footer__top-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.osahou-footer__top-link:hover {
+  color: var(--color-text-1);
+}
+
+.osahou-footer__top-link:focus-visible {
+  outline: 3px solid var(--color-brand-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── 中間層：ソーシャル・連絡先 ── */
+
+.osahou-footer__middle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.osahou-footer__contact {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-2);
+  text-decoration: none;
+  margin-right: auto;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.osahou-footer__contact:hover {
+  color: var(--color-text-1);
+}
+
+.osahou-footer__contact:focus-visible {
+  outline: 3px solid var(--color-brand-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.osahou-footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.osahou-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-2);
+  text-decoration: none;
+  transition: background var(--duration-fast) var(--ease-out),
+              color     var(--duration-fast) var(--ease-out);
+}
+
+.osahou-footer__social-link:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text-1);
+}
+
+.osahou-footer__social-link:focus-visible {
+  outline: 3px solid var(--color-brand-light);
+  outline-offset: 2px;
+}
+
+/* ── 下層：コピーライト ── */
+
+.osahou-footer__bottom {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-6) 0;
+}
+
+.osahou-footer__copyright {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-md);
+  color: var(--color-text-3);
+  margin: 0;
+}
