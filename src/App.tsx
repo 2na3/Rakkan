@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
-import { SealIcon } from '@phosphor-icons/react'
 import { Header } from './components/Header'
+import rakkanLogo from './assets/rakkan-logo.svg'
 import { Footer } from './components/Footer'
 import { DropZone } from './components/DropZone'
 import { ProfilePanel } from './components/ProfilePanel'
@@ -156,7 +156,7 @@ export function App() {
     <div className="min-h-screen bg-surface flex flex-col">
       {/* ヘッダー */}
       <Header
-        brandLogo={<SealIcon size={28} weight="fill" aria-hidden />}
+        brandLogo={<img src={rakkanLogo} width={40} height={40} alt="" aria-hidden />}
         brandName="Rakkan"
         sticky
       />
