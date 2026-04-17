@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Header } from './components/Header'
 import rakkanLogo from './assets/rakkan-logo.svg'
+import rakkanLogotype from './assets/rakkan-logotype.svg'
 import { Footer } from './components/Footer'
 import { DropZone } from './components/DropZone'
 import { ProfilePanel } from './components/ProfilePanel'
@@ -156,8 +157,12 @@ export function App() {
     <div className="min-h-screen bg-surface flex flex-col">
       {/* ヘッダー */}
       <Header
-        brandLogo={<img src={rakkanLogo} width={40} height={40} alt="" aria-hidden />}
-        brandName="Rakkan"
+        brandLogo={
+          <>
+            <img src={rakkanLogo} width={40} height={40} alt="" aria-hidden />
+            <img src={rakkanLogotype} style={{ height: '64px', width: 'auto', marginLeft: '-6px', transform: 'translateY(-3px)' }} alt="Rakkan" />
+          </>
+        }
         sticky
       />
 
